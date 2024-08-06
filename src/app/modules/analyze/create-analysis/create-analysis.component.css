@@ -26,3 +26,28 @@ span.example {
     color: #fff !important;
     font-weight: 500;
 }
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-top: 10px solid #7aca25;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 1.5s linear infinite;
+    margin: 0 auto;
+    transform: rotate(0deg);
+
+}
+
+@keyframes spin {
+
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-area {
+    min-height: 470px;
+    padding: 80px 0 0;
+}

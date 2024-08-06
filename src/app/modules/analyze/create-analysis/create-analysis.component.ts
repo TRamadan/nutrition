@@ -25,6 +25,8 @@ import { IngredientsDetailsComponent } from '../ingredients-details/ingredients-
 export class CreateAnalysisComponent implements OnInit {
   analysisForm!: FormGroup;
   showAnalysisDetails: boolean = false;
+  showSpinner: boolean = false;
+
   ingredientsData: any[] = [];
   nutritionFacts: any;
   constructor(
@@ -47,6 +49,7 @@ export class CreateAnalysisComponent implements OnInit {
 
   //here is the function needed to analyse added ingredients
   analyseIngredients(): void {
+    this.showSpinner = true;
     const ingredients = this.analysisForm.get('ingredients')?.value.split('\n');
     const body = {
       ingr: ingredients,
@@ -54,13 +57,13 @@ export class CreateAnalysisComponent implements OnInit {
     this.ingredientsService
       .makeAnalysis(body, environment.appId, environment.appKey)
       .then((response: any) => {
+        this.showSpinner = false;
         this.showAnalysisDetails = true;
         this.nutritionFacts = {
           calories: response.calories,
           totalNutrients: response.totalNutrients,
           totalDaily: response.totalDaily,
         };
-        console.log(this.nutritionFacts);
         // Create a new array containing the `parsed` property from each ingredient
         this.ingredientsData = response.ingredients.map(
           (ingredient: any) => ingredient.parsed
@@ -68,9 +71,9 @@ export class CreateAnalysisComponent implements OnInit {
 
         // Flatten the array of arrays if needed
         this.ingredientsData = this.ingredientsData.flat();
-        console.log(this.ingredientsData);
       })
       .catch((error: any) => {
+        this.showSpinner = false;
         this.showAnalysisDetails = false;
       });
   }
