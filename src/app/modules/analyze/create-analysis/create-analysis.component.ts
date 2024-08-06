@@ -68,6 +68,7 @@ export class CreateAnalysisComponent implements OnInit {
 
         // Flatten the array of arrays if needed
         this.ingredientsData = this.ingredientsData.flat();
+        console.log(this.ingredientsData);
       })
       .catch((error: any) => {
         this.showAnalysisDetails = false;

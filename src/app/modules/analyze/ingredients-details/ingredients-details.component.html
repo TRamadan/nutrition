@@ -19,7 +19,10 @@
       <td>
         {{ ingredients.food }}
       </td>
-      <td></td>
+      <td>
+        {{ ingredients.nutrients.ENERC_KCAL.quantity | round : 1 }}
+        {{ ingredients.nutrients.ENERC_KCAL.unit }}
+      </td>
       <td>{{ ingredients.weight | round : 1 }} g</td>
     </tr>
     }
