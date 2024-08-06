@@ -1,0 +1,220 @@
+<div class="nutrition-facts">
+  <div class="header">
+    <h1>Nutrition Facts</h1>
+  </div>
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th class="amps" colspan="3">Amount Per Serving</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="calories-font" colspan="2"><b>Calories</b></th>
+        <td class="calories-num">{{ nutritionFactsDetails.calories }}</td>
+      </tr>
+
+      <tr class="info">
+        <td colspan="3" class="small-info"><b>% Daily Value*</b></td>
+      </tr>
+      <tr>
+        <th colspan="2">
+          <b>Total Fat</b>
+          {{ nutritionFactsDetails.totalNutrients.FAT.quantity | round : 1 }}
+          {{ nutritionFactsDetails.totalNutrients.FAT.unit }}
+        </th>
+        <td class="text-end">
+          <b>
+            {{ nutritionFactsDetails.totalDaily.FAT.quantity | round : 1 }}
+          </b>
+          {{ nutritionFactsDetails.totalDaily.FAT.unit }}
+        </td>
+      </tr>
+
+      <tr>
+        <th colspan="2">
+          <b>Saturated Fat</b>
+          {{ nutritionFactsDetails.totalNutrients.FAT.quantity | round : 1 }}
+          {{ nutritionFactsDetails.totalNutrients.FAT.unit }}
+        </th>
+        <td class="text-end">
+          <b>
+            {{ nutritionFactsDetails.totalDaily.FASAT.quantity | round : 1 }}
+          </b>
+          {{ nutritionFactsDetails.totalDaily.FASAT.unit }}
+        </td>
+      </tr>
+
+      <tr>
+        <th colspan="2">
+          <b>Trans Fat</b>
+          {{ nutritionFactsDetails.totalNutrients.FATRN.quantity | round : 1 }}
+          {{ nutritionFactsDetails.totalNutrients.FATRN.unit }}
+        </th>
+        <td class="text-end">
+          <b>
+            {{ nutritionFactsDetails.totalDaily.FATRN?.quantity | round : 1 }}
+          </b>
+          {{ nutritionFactsDetails.totalDaily.FATRN?.unit }}
+        </td>
+      </tr>
+
+      <tr>
+        <th colspan="2">
+          <b>Cholesterol</b>
+          {{ nutritionFactsDetails.totalNutrients.CHOLE?.quantity | round : 1 }}
+          {{ nutritionFactsDetails.totalNutrients.CHOLE?.unit }}
+        </th>
+        <td class="text-end">
+          <b>
+            {{ nutritionFactsDetails.totalDaily.CHOLE?.quantity | round : 1 }}
+          </b>
+          {{ nutritionFactsDetails.totalDaily.CHOLE?.unit }}
+        </td>
+      </tr>
+
+      <tr>
+        <th colspan="2">
+          <b>Sodium</b>
+          {{ nutritionFactsDetails.totalNutrients.NA?.quantity | round : 1 }}
+          {{ nutritionFactsDetails.totalNutrients.NA?.unit }}
+        </th>
+        <td class="text-end">
+          <b>
+            {{ nutritionFactsDetails.totalDaily.NA?.quantity | round : 1 }}
+          </b>
+          {{ nutritionFactsDetails.totalDaily.NA?.unit }}
+        </td>
+      </tr>
+
+      <tr>
+        <th colspan="2">
+          <b>Total Carbohydrate</b>
+          {{
+            nutritionFactsDetails.totalNutrients.CHOCDF?.quantity | round : 1
+          }}
+          {{ nutritionFactsDetails.totalNutrients.CHOCDF?.unit }}
+        </th>
+        <td class="text-end">
+          <b>
+            {{ nutritionFactsDetails.totalDaily.CHOCDF?.quantity | round : 1 }}
+          </b>
+          {{ nutritionFactsDetails.totalDaily.CHOCDF?.unit }}
+        </td>
+      </tr>
+
+      <tr>
+        <th colspan="2">
+          <b>Dietary Fiber</b>
+          {{ nutritionFactsDetails.totalNutrients.FIBTG?.quantity | round : 1 }}
+          {{ nutritionFactsDetails.totalNutrients.FIBTG?.unit }}
+        </th>
+        <td class="text-end">
+          <b>
+            {{ nutritionFactsDetails.totalDaily.FIBTG?.quantity | round : 1 }}
+          </b>
+          {{ nutritionFactsDetails.totalDaily.FIBTG?.unit }}
+        </td>
+      </tr>
+
+      <tr>
+        <th colspan="2">
+          <b>Total Sugars</b>
+          {{ nutritionFactsDetails.totalNutrients.SUGAR?.quantity | round : 1 }}
+          {{ nutritionFactsDetails.totalNutrients.SUGAR?.unit }}
+        </th>
+        <td class="text-end">
+          <b>
+            {{ nutritionFactsDetails.totalDaily.SUGAR?.quantity | round : 1 }}
+          </b>
+          {{ nutritionFactsDetails.totalDaily.SUGAR?.unit }}
+        </td>
+      </tr>
+
+      <tr>
+        <th colspan="2">
+          <b>Includes - Added Sugars</b>
+        </th>
+        <td class="text-end"></td>
+      </tr>
+
+      <tr>
+        <th colspan="2">
+          <b>Protein</b>
+          {{
+            nutritionFactsDetails.totalNutrients.PROCNT?.quantity | round : 1
+          }}
+          {{ nutritionFactsDetails.totalNutrients.PROCNT?.unit }}
+        </th>
+        <td class="text-end">
+          <b>
+            {{ nutritionFactsDetails.totalDaily.PROCNT?.quantity | round : 1 }}
+          </b>
+          {{ nutritionFactsDetails.totalDaily.PROCNT?.unit }}
+        </td>
+      </tr>
+
+      <tr>
+        <th colspan="2">
+          <b>Vitamine D</b>
+          {{ nutritionFactsDetails.totalNutrients.VITD?.quantity | round : 1 }}
+          {{ nutritionFactsDetails.totalNutrients.VITD?.unit }}
+        </th>
+        <td class="text-end">
+          <b>
+            {{ nutritionFactsDetails.totalDaily.VITD?.quantity | round : 1 }}
+          </b>
+          {{ nutritionFactsDetails.totalDaily.VITD?.unit }}
+        </td>
+      </tr>
+
+      <tr>
+        <th colspan="2">
+          <b>Calcium</b>
+          {{ nutritionFactsDetails.totalNutrients.CA?.quantity | round : 1 }}
+          {{ nutritionFactsDetails.totalNutrients.CA?.unit }}
+        </th>
+        <td class="text-end">
+          <b>
+            {{ nutritionFactsDetails.totalDaily.CA?.quantity | round : 1 }}
+          </b>
+          {{ nutritionFactsDetails.totalDaily.CA?.unit }}
+        </td>
+      </tr>
+
+      <tr>
+        <th colspan="2">
+          <b>Iron</b>
+          {{ nutritionFactsDetails.totalNutrients.FE?.quantity | round : 1 }}
+          {{ nutritionFactsDetails.totalNutrients.FE?.unit }}
+        </th>
+        <td class="text-end">
+          <b>
+            {{ nutritionFactsDetails.totalDaily.FE?.quantity | round : 1 }}
+          </b>
+          {{ nutritionFactsDetails.totalDaily.FE?.unit }}
+        </td>
+      </tr>
+
+      <tr>
+        <th colspan="2">
+          <b>Potassium</b>
+          {{ nutritionFactsDetails.totalNutrients.K?.quantity | round : 1 }}
+          {{ nutritionFactsDetails.totalNutrients.K?.unit }}
+        </th>
+        <td class="text-end">
+          <b>
+            {{ nutritionFactsDetails.totalDaily.K?.quantity | round : 1 }}
+          </b>
+          {{ nutritionFactsDetails.totalDaily.K?.unit }}
+        </td>
+      </tr>
+    </tbody>
+
+    <caption>
+      <span class="table-caption fw-bold">
+        *Percent Daily Values are based on a 2000 calorie diet
+      </span>
+    </caption>
+  </table>
+</div>

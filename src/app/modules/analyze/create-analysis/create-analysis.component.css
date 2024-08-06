@@ -1,0 +1,28 @@
+.inner-result-area {
+    background: #F2F4F8;
+    padding: 0 30px 30px 30px;
+    margin-top: 90px;
+}
+
+.analysis p {
+    line-height: 24px;
+    padding: 20px 0 0;
+}
+
+span.example {
+    color: #7aca25;
+    font-weight: 500;
+}
+
+.form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.btn-green {
+    background: #6ACC00;
+    border-radius: 25px;
+    border: 0 none;
+    color: #fff !important;
+    font-weight: 500;
+}

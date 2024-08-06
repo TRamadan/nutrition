@@ -1,0 +1,75 @@
+<div class="container rounded py-5">
+  <div class="row inner-result-area p-4">
+    <div class="col-md-12 text-center">
+      <p>
+        Enter an ingredient list list for what you are cooking, like
+        <span class="example">"1 cup rice, 10 oz chickpeas", etc</span>
+        <br />
+        Enter each ingredient on a new line.
+      </p>
+    </div>
+    <div class="row">
+      <div
+        [class]="showAnalysisDetails ? 'col-sm-8 mx-auto' : 'col-md-8 mx-auto'"
+      >
+        <form [formGroup]="analysisForm">
+          <textarea
+            class="form-control"
+            formControlName="ingredients"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </form>
+
+        <div class="row text-center p-4">
+          @if(!showAnalysisDetails) {
+          <div class="col-md-12">
+            <button
+              class="btn px-5 btn-green rounded-pill"
+              [disabled]="analysisForm.invalid"
+              (click)="analyseIngredients()"
+            >
+              Analyze
+            </button>
+          </div>
+          } @else {
+
+          <div class="col-md-6">
+            <button
+              class="btn px-5 btn-green rounded-pill"
+              [disabled]="analysisForm.invalid"
+              (click)="analyseIngredients()"
+            >
+              Analyze
+            </button>
+          </div>
+
+          <div class="col-md-6">
+            <button
+              class="btn px-5 btn-green rounded-pill"
+              [disabled]="analysisForm.invalid"
+              (click)="newRecipe()"
+            >
+              New recipe
+            </button>
+          </div>
+
+          <div class="row">
+            <app-ingredients-details
+              [ingredientsData]="ingredientsData"
+            ></app-ingredients-details>
+          </div>
+          }
+        </div>
+      </div>
+
+      @if(showAnalysisDetails) {
+      <div class="col-md-4">
+        <app-show-analysis
+          [nutritionFactsDetails]="nutritionFacts"
+        ></app-show-analysis>
+      </div>
+      }
+    </div>
+  </div>
+</div>

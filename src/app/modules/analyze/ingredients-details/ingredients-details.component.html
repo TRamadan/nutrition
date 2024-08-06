@@ -1,0 +1,27 @@
+<table class="table table-borderless mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Qty</th>
+      <th scope="col">Unit</th>
+      <th scope="col">Food</th>
+      <th scope="col">Calories</th>
+      <th scope="col">Weight</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for(ingredients of ingredientsData; track ingredients){
+    <tr>
+      <td>{{ ingredients.quantity }}</td>
+      <td>
+        {{ ingredients.measure }}
+      </td>
+      <td>
+        {{ ingredients.food }}
+      </td>
+      <td></td>
+      <td>{{ ingredients.weight | round : 1 }} g</td>
+    </tr>
+    }
+  </tbody>
+</table>
